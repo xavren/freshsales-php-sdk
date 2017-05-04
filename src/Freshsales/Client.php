@@ -1,7 +1,8 @@
 <?php
 
-
 namespace Freshsales;
+
+use Exception;
 
 /**
  * Class Client.

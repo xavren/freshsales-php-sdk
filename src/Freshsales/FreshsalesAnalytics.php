@@ -2,6 +2,8 @@
 
 namespace Freshsales;
 
+use Exception;
+
 /**
  * Class Freshsales.
  */
