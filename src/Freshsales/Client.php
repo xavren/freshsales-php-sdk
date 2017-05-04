@@ -1,7 +1,7 @@
 <?php
 
 
-require __DIR__.'/CurlTransport.php';
+namespace Freshsales;
 
 /**
  * Class Client.
@@ -69,7 +69,7 @@ class Client
     public function trackPageView(array $properties)
     {
         $message = array();
-        $pageView = new stdClass();
+        $pageView = new \stdClass();
         $pageView->url = $properties['url'];
         $message['identifier'] = $properties['identifier'];
         // unset identifier from properties
@@ -88,7 +88,7 @@ class Client
      */
     private function convert_array_to_object(array $prop)
     {
-        $object = new stdClass();
+        $object = new \stdClass();
         foreach ($prop as $key => $value) {
             $object->$key = $value;
         }

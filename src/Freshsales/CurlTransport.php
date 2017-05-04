@@ -1,5 +1,6 @@
 <?php
 
+namespace Freshsales;
 
 class CurlTransport
 {
