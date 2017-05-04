@@ -1,16 +1,13 @@
 <?php
 
-/**
- */
 
-require(__DIR__ . '/CurlTransport.php');
+require __DIR__.'/CurlTransport.php';
 
 /**
- * Class Client
+ * Class Client.
  */
 class Client
 {
-
     /**
      * @var CurlTransport
      */
@@ -18,6 +15,7 @@ class Client
 
     /**
      * Client constructor.
+     *
      * @param $properties
      */
     public function __construct($properties)
@@ -26,8 +24,10 @@ class Client
     }
 
     /**
-     * Identify user
+     * Identify user.
+     *
      * @param array $properties
+     *
      * @throws Exception
      */
     public function identify(array $properties)
@@ -42,8 +42,10 @@ class Client
     }
 
     /**
-     * Track Event
+     * Track Event.
+     *
      * @param array $properties
+     *
      * @throws Exception
      */
     public function trackEvent(array $properties)
@@ -58,8 +60,10 @@ class Client
     }
 
     /**
-     * Track Page View
+     * Track Page View.
+     *
      * @param array $properties
+     *
      * @throws Exception
      */
     public function trackPageView(array $properties)
@@ -76,8 +80,10 @@ class Client
     }
 
     /**
-     * Utility method to convert array members to an object
+     * Utility method to convert array members to an object.
+     *
      * @param array $prop
+     *
      * @return stdClass
      */
     private function convert_array_to_object(array $prop)
@@ -86,6 +92,7 @@ class Client
         foreach ($prop as $key => $value) {
             $object->$key = $value;
         }
+
         return $object;
     }
 }

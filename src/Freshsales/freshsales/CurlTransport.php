@@ -1,7 +1,6 @@
 <?php
 
-/**
- */
+
 class CurlTransport
 {
     /**
@@ -15,6 +14,7 @@ class CurlTransport
 
     /**
      * CurlTransport constructor.
+     *
      * @param $properties
      */
     public function __construct($properties)
@@ -26,6 +26,7 @@ class CurlTransport
     /**
      * @param $action
      * @param $message
+     *
      * @throws Exception
      */
     public function post($action, $message)
@@ -39,27 +40,30 @@ class CurlTransport
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
                 'Accept: application/json',
-                'Content-Length: ' . strlen($body))
+                'Content-Length: '.strlen($body), )
         );
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response  = curl_exec($ch);
+        $response = curl_exec($ch);
         $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         if ($http_status != 200) {
-            throw new Exception("Freshsales encountered an error. CODE: " . $http_status . " Response: " . $response);
+            throw new Exception('Freshsales encountered an error. CODE: '.$http_status.' Response: '.$response);
         }
     }
 
     /**
-     * Construct URL from domain and action
+     * Construct URL from domain and action.
+     *
      * @param $action
+     *
      * @return string Constructed URL
      */
     private function constructUrl($action)
     {
-        $url = $this->domain . '/track/'  . $action;
+        $url = $this->domain.'/track/'.$action;
+
         return $url;
     }
 }

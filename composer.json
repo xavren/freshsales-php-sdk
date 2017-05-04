@@ -1,6 +1,6 @@
 {
-    "name": "andreybolonin/freshsales",
-    "license": "proprietary",
+    "name": "xavren/freshsales",
+    "license": "mit",
     "type": "project",
     "description": "freshsales",
     "keywords": ["freshsales"],
@@ -11,8 +11,5 @@
     },
     "require": {
         "php": ">=5.6"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^5.6"
     }
 }
